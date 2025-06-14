@@ -17,7 +17,7 @@ function App() {
   /* Fetch and update the state once */
   useEffect(() => {
     (async () => {
-      const f = await fetch("xlsx/Copy of Регистар Лиценци (2025 год)_ok.xlsx");
+      const f = await fetch("./xlsx/Copy of Регистар Лиценци (2025 год)_ok.xlsx");
       const ab = await f.arrayBuffer();
 
       /* Parse */
