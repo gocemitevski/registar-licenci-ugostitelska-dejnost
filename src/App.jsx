@@ -41,7 +41,7 @@ function App() {
         modifiedDate={modifiedDate}
         application={application}
       />
-      <div className="container-fluid">
+      <div className="container-fluid flex-fill">
         <div className="row mb-5">
           <div className="col-lg-10 offset-lg-1">
             <Routes>
