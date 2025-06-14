@@ -6,5 +6,5 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  base: "https://gocemitevski.github.io/registar-licenci-ugostitelska-dejnost"
+  base: "."
 });
