@@ -48,8 +48,8 @@ export default function Table({ tableData, headersRow = 3 }) {
                   row.__rowNum__ === headersRow &&
                   row["__EMPTY_1"] && (
                     <tr key={key}>
-                      {Object.keys(filters).map((filter, key) => (
-                        <th className="col-xl-1" scope="col" key={key}>
+                      {Object.keys(filters).map((key) => (
+                        <th className="col-xl-2" scope="col" key={key}>
                           <label htmlFor="1" className="form-label">
                             {row[Object.keys(filters)[key]]}
                           </label>
