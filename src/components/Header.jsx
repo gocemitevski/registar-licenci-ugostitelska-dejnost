@@ -5,10 +5,10 @@ export default function Header({ createdDate, modifiedDate, application }) {
     <div className="text-bg-primary py-5">
       <header className="container-fluid">
         <div className="row">
-          <div className="col-lg-10 offset-lg-1">
+          <div className="col-xxxl-10 offset-xxxl-1">
             <div className="row">
-              <div className="col-xxl-6">
-                <h1 className="mt-xl-5 mb-4">
+              <div className="col-xxxl-6">
+                <h1 className="mt-xxxl-5 mb-4">
                   <a
                     href="/"
                     className="hstack link-light link-underline link-underline-opacity-50 gap-3 link-offset-1"
@@ -47,7 +47,7 @@ export default function Header({ createdDate, modifiedDate, application }) {
                   <label htmlFor="version">Верзија</label>
                 </div>
               </div> */}
-              <div className="col-xxl-6">
+              <div className="col-xxxl-6">
                 <div className="row">
                   <div className="col-lg-4">
                     <dl className="mb-0">
@@ -89,7 +89,7 @@ export default function Header({ createdDate, modifiedDate, application }) {
                   </div>
                 </div>
               </div>
-              <div className="col-xxl-4 offset-xxl-2">
+              <div className="col-xxxl-4 offset-xxxl-2 mt-3 mt-xxxl-0">
                 <div className="alert alert-secondary align-items-start hstack gap-3 shadow">
                   <i className="bi bi-exclamation-square"></i>
                   <div className="vstack gap-2">

@@ -3,9 +3,9 @@ export default function Footer() {
     <div className="text-bg-primary py-5">
       <footer className="container-fluid">
         <div className="row">
-          <div className="col-lg-10 offset-lg-1">
-            <div className="row">
-              <div className="col">
+          <div className="col-xxxl-10 offset-xxxl-1">
+            <div className="row g-3">
+              <div className="col-xxl-6">
                 <a
                   className="link-light"
                   rel="noopener"
@@ -23,7 +23,7 @@ export default function Footer() {
                 </a>
                 “.
               </div>
-              <div className="col-auto">
+              <div className="col-xxl-6 text-xxl-end">
                 Изработено од{" "}
                 <a
                   className="link-light"

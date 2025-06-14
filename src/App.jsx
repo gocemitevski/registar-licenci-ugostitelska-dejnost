@@ -43,7 +43,7 @@ function App() {
       />
       <div className="container-fluid flex-fill">
         <div className="row mb-5">
-          <div className="col-lg-10 offset-lg-1">
+          <div className="col-xxxl-10 offset-xxxl-1">
             <Routes>
               <Route path="/" element={<Table tableData={izdadeni} />} />
               <Route
