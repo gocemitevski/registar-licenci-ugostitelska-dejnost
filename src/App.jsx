@@ -6,6 +6,7 @@ import Table from "./components/Table";
 import Footer from "./components/Footer";
 import UgostitelskiObjekt from "./components/UgostitelskiObjekt";
 import VidNaLicenca from "./components/VidNaLicenca";
+import CookieConsent from "react-cookie-consent";
 
 function App() {
   const [izdadeni, setIzdadeni] = useState([]);
@@ -46,10 +47,7 @@ function App() {
           <div className="col-xxxl-10 offset-xxxl-1">
             <Routes>
               <Route path="/" element={<Table tableData={izdadeni} />} />
-              <Route
-                path="/odbieni"
-                element={<Table tableData={odbieni} />}
-              />
+              <Route path="/odbieni" element={<Table tableData={odbieni} />} />
               <Route
                 path="/odzemeni"
                 element={<Table tableData={odzemeni} headersRow={2} />}
@@ -64,6 +62,20 @@ function App() {
         </div>
       </div>
       <Footer />
+      <CookieConsent
+        location="bottom"
+        buttonText="Во ред"
+        cookieName={import.meta.env.VITE_APP_GA_ID}
+        containerClasses="fixed-bottom bg-dark text-light d-flex flex-wrap justify-content-between align-content-center p-3"
+        contentClasses="d-inline-flex my-auto py-2"
+        buttonClasses="btn btn-light"
+        declineButtonClasses="btn btn-outline-light ms-2"
+        disableStyles={true}
+        flipButtons={true}
+      >
+        Ова мрежно место користи т.н. колачиња за подобрување на корисничкото
+        искуство.
+      </CookieConsent>
     </Router>
   );
 }
