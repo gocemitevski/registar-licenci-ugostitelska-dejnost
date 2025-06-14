@@ -16,3 +16,14 @@
 ## Машинска обработка
 
 Оваа верзија на регистарот не вклучува никаква дополнителна машинска обработка на податоците, па во нив ќе најдете печатни грешки, недоследности, дупли и/или слични вредности. Земена е [оригиналната датотека](https://www.economy.gov.mk/mk-MK/news/registar-na-izdadeni-odzemeni-i-odbieni-barana-zalicenci-za-noken-bar-kabare-diskoklub-i-diskoklub-na-otvoren-prostor.nspx) од Министерство за економија и труд на Република Северна Македонија и единствено исчитана за приказ во прелистувач.
+
+## За изработката
+
+Изработено со помош на:
+
+- React
+- Vite
+- Bootstrap
+- Bootstrap Icons
+- xlsx
+- Node
