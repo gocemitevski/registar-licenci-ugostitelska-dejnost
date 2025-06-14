@@ -105,19 +105,25 @@ export default function Table({ tableData, headersRow = 3 }) {
                           <td key={key}>
                             <div className="hstack justify-content-between align-items-start gap-2">
                               <span>{row[filter]}</span>
-                              <button
-                                title="Постави филтер"
-                                onClick={() =>
-                                  setFilters({
-                                    ...filters,
-                                    [Object.keys(filters)[key]]:
-                                      row[filter].toString(),
-                                  })
-                                }
-                                className="btn btn-outline-secondary"
-                              >
-                                <i className="bi bi-search"></i>
-                              </button>
+                              {!filters[Object.keys(filters)[key]].includes(
+                                row[filter]
+                              ) ? (
+                                <button
+                                  title={`Пребарај за ${row[filter]}`}
+                                  onClick={() =>
+                                    setFilters({
+                                      ...filters,
+                                      [Object.keys(filters)[key]]:
+                                        row[filter].toString(),
+                                    })
+                                  }
+                                  className="btn btn-outline-secondary"
+                                >
+                                  <i className="bi bi-search"></i>
+                                </button>
+                              ) : (
+                                ``
+                              )}
                             </div>
                           </td>
                         ))}
@@ -130,7 +136,8 @@ export default function Table({ tableData, headersRow = 3 }) {
                     <div className="hstack gap-3">
                       <i className="bi bi-exclamation-square"></i>
                       <p className="mb-0">
-                        Не постојат лиценци за внесените параметри.
+                        Не постојат лиценци за внесените параметри или сте
+                        направиле некоја грешка при пребарувањето.
                       </p>
                     </div>
                   </td>
