@@ -4,8 +4,6 @@ import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Table from "./components/Table";
 import Footer from "./components/Footer";
-import UgostitelskiObjekt from "./components/UgostitelskiObjekt";
-import VidNaLicenca from "./components/VidNaLicenca";
 import CookieConsent from "react-cookie-consent";
 
 function App() {
@@ -52,11 +50,11 @@ function App() {
                 path="/odzemeni"
                 element={<Table tableData={odzemeni} headersRow={2} />}
               />
-              <Route
+              {/* <Route
                 path="/ugostitelski-objekt/:uo"
                 element={<UgostitelskiObjekt />}
               />
-              <Route path="/vid-na-licenca/:l" element={<VidNaLicenca />} />
+              <Route path="/vid-na-licenca/:l" element={<VidNaLicenca />} /> */}
             </Routes>
           </div>
         </div>
