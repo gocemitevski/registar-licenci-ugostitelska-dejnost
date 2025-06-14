@@ -31,8 +31,6 @@ export default function Table({ tableData, headersRow = 3 }) {
     setFilteredData(tableData);
   }, [tableData]);
 
-  console.log(Object.keys(filters)[0]);
-
   return (
     <Fragment>
       <TabsNav />
