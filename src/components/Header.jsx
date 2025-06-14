@@ -10,7 +10,7 @@ export default function Header({ createdDate, modifiedDate, application }) {
               <div className="col-xxxl-6">
                 <h1 className="mt-xxxl-5 mb-4">
                   <a
-                    href="/"
+                    href="./"
                     className="hstack link-light link-underline link-underline-opacity-50 gap-3 link-offset-1"
                   >
                     <i className="bi bi-fork-knife display-1"></i>
