@@ -1,34 +1,24 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
-export default function InfoIcon({ title }) {
-  const [tooltip, toggleTooltip] = useState(false);
+export default function InfoIcon({ title, id }) {
   return (
     <Fragment>
       <button
-        data-bs-toggle="tooltip"
-        data-bs-title={title}
+        popoverTarget={`info-icon-${id}`}
         type="button"
         className="btn btn-link link-light"
-        onClick={() => toggleTooltip(!tooltip)}
       >
         <i className="bi bi-question-square"></i>
       </button>
-      {tooltip ? (
-        <div
-          className="alert alert-light alert-dismissible fade show position-absolute shadow-lg"
-          role="alert"
-        >
-          {title}
-          <button
-            type="button"
-            className="btn-close"
-            onClick={() => toggleTooltip(!tooltip)}
-            aria-label="Close"
-          ></button>
-        </div>
-      ) : (
-        false
-      )}
+      <div
+        popover={"auto"}
+        id={`info-icon-${id}`}
+        role="alert"
+        className="alert alert-light alert-dismissible fade show w-25 fw-normal shadow-lg position-absolute p-5"
+      >
+        {title}
+        <button type="button" className="btn-close" popoverTarget={`info-icon-${id}`}></button>
+      </div>
     </Fragment>
   );
 }

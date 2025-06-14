@@ -50,10 +50,13 @@ export default function Header({ createdDate, modifiedDate, application }) {
               <div className="col-xxl-6">
                 <div className="row">
                   <div className="col-lg-4">
-                    <dl>
-                      <dt className="hstack gap-2">
+                    <dl className="mb-0">
+                      <dt className="hstack gap-2 position-relative">
                         <span>Датум на создавање</span>
-                        <InfoIcon title="Се однесува на датумот на создавањето на изворната датотека" />
+                        <InfoIcon
+                          id="datumSozdavanje"
+                          title="Се однесува на датумот на создавање на изворната датотека на регистарот. Овој датум е запишан во мета-податоците на изворната датотека."
+                        />
                       </dt>
                       <dd>
                         <time dateTime={createdDate} title={createdDate}>
@@ -63,10 +66,13 @@ export default function Header({ createdDate, modifiedDate, application }) {
                     </dl>
                   </div>
                   <div className="col-lg-4">
-                    <dl>
-                      <dt className="hstack gap-2">
+                    <dl className="mb-0">
+                      <dt className="hstack gap-2 position-relative">
                         <span>Датум на ажурирање</span>
-                        <InfoIcon title="Се однесува на датумот на ажурирањето на изворната датотека" />
+                        <InfoIcon
+                          id="datumAzuriranje"
+                          title="Се однесува на датумот на ажурирање на изворната датотека. Овој датум е запишан во мета-податоците на изворната датотека."
+                        />
                       </dt>
                       <dd>
                         <time dateTime={modifiedDate} title={modifiedDate}>
@@ -76,7 +82,7 @@ export default function Header({ createdDate, modifiedDate, application }) {
                     </dl>
                   </div>
                   <div className="col-lg-4">
-                    <dl>
+                    <dl className="mb-0">
                       <dt>Изворен формат</dt>
                       <dd>{application}</dd>
                     </dl>
@@ -84,15 +90,21 @@ export default function Header({ createdDate, modifiedDate, application }) {
                 </div>
               </div>
               <div className="col-xxl-4 offset-xxl-2">
-                <p className="alert alert-secondary align-items-start hstack gap-3 shadow">
+                <div className="alert alert-secondary align-items-start hstack gap-3 shadow">
                   <i className="bi bi-exclamation-square"></i>
-                  <span className="lh-sm">
-                    Сите <strong>печатни грешки</strong> и недоследности
-                    потекнуваат од изворната датотека и не се предмет на
-                    дополнителна машинска обработка. Соодветно на тоа, може да
-                    забележите <strong>дупли и/или слични вредности</strong>.
-                  </span>
-                </p>
+                  <div className="vstack gap-2">
+                    <p className="lh-sm mb-0">
+                      Сите <strong>печатни грешки</strong> и недоследности
+                      потекнуваат од изворната датотека и не се предмет на
+                      дополнителна машинска обработка. Соодветно на тоа, може да
+                      забележите <strong>дупли и/или слични вредности</strong>.
+                    </p>
+                    <p className="lh-sm mb-0">
+                      Авторот на оваа компјутерска презентација не сноси никаква
+                      одговорност за точноста на податоците.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
