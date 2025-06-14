@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { read, utils } from "xlsx";
 import Header from "./components/Header";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Table from "./components/Table";
 import Footer from "./components/Footer";
 import CookieConsent from "react-cookie-consent";
