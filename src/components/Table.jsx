@@ -22,7 +22,7 @@ export default function Table({ tableData, headersRow = 3 }) {
       if (!filters[column]) return true; // If filter is empty, include the row
       return (
         row[column] &&
-        row[column].toString().toLowerCase().includes(filters[column])
+        row[column].toString().trim().toLowerCase().includes(filters[column].trim().toLowerCase())
       );
     })
   );
