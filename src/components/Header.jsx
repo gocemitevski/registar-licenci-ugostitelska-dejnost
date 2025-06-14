@@ -95,13 +95,13 @@ export default function Header({ createdDate, modifiedDate, application }) {
                 <div className="alert alert-secondary align-items-start hstack gap-3 shadow">
                   <i className="bi bi-exclamation-square"></i>
                   <div className="vstack gap-2">
-                    <p className="lh-sm mb-0">
+                    <p className="mb-0">
                       Сите <strong>печатни грешки</strong> и недоследности
                       потекнуваат од изворната датотека и не се предмет на
                       дополнителна машинска обработка. Соодветно на тоа, може да
                       забележите <strong>дупли и/или слични вредности</strong>.
                     </p>
-                    <p className="lh-sm mb-0">
+                    <p className="mb-0">
                       Авторот на оваа компјутерска презентација не сноси никаква
                       одговорност за точноста на податоците.
                     </p>
