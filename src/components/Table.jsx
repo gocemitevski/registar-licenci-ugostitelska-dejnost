@@ -2,7 +2,7 @@ import TabsNav from "./TabsNav";
 import { Fragment, useEffect, useState } from "react";
 
 export default function Table({ tableData, headersRow = 3 }) {
-  const placeholder = "Пребарајте";
+  const placeholder = "Пребарајте...";
   const [filters, setFilters] = useState({
     __EMPTY: "",
     __EMPTY_1: "",
