@@ -22,7 +22,11 @@ export default function Table({ tableData, headersRow = 3 }) {
       if (!filters[column]) return true; // If filter is empty, include the row
       return (
         row[column] &&
-        row[column].toString().trim().toLowerCase().includes(filters[column].trim().toLowerCase())
+        row[column]
+          .toString()
+          .trim()
+          .toLowerCase()
+          .includes(filters[column].trim().toLowerCase())
       );
     })
   );
@@ -66,7 +70,11 @@ export default function Table({ tableData, headersRow = 3 }) {
                             <button
                               className="btn btn-outline-secondary"
                               type="button"
-                              title={filters[Object.keys(filters)[key]].length ? `Отстрани филтер` : `Внесете вредност за да можете да ја избришете`}
+                              title={
+                                filters[Object.keys(filters)[key]].length
+                                  ? `Отстрани филтер`
+                                  : `Внесете вредност за да можете да ја избришете`
+                              }
                               onClick={() =>
                                 setFilters({
                                   ...filters,
@@ -94,7 +102,24 @@ export default function Table({ tableData, headersRow = 3 }) {
                     row.__rowNum__ > headersRow && (
                       <tr key={key}>
                         {Object.keys(filters).map((filter, key) => (
-                          <td key={key}>{row[filter]}</td>
+                          <td key={key}>
+                            <div className="hstack justify-content-between align-items-start gap-2">
+                              <span>{row[filter]}</span>
+                              <button
+                                title="Постави филтер"
+                                onClick={() =>
+                                  setFilters({
+                                    ...filters,
+                                    [Object.keys(filters)[key]]:
+                                      row[filter].toString(),
+                                  })
+                                }
+                                className="btn btn-outline-secondary"
+                              >
+                                <i className="bi bi-search"></i>
+                              </button>
+                            </div>
+                          </td>
                         ))}
                       </tr>
                     )
