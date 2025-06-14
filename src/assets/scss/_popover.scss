@@ -1,0 +1,7 @@
+::backdrop {
+  background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+}
+
+.alert {
+  --bs-alert-margin-bottom: auto;
+}
