@@ -66,7 +66,7 @@ export default function Table({ tableData, headersRow = 3 }) {
                             <button
                               className="btn btn-outline-secondary"
                               type="button"
-                              title="Отстрани филтер"
+                              title={filters[Object.keys(filters)[key]].length ? `Отстрани филтер` : `Внесете вредност за да можете да ја избришете`}
                               onClick={() =>
                                 setFilters({
                                   ...filters,
