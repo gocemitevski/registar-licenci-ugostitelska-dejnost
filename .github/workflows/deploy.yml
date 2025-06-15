@@ -47,6 +47,7 @@ jobs:
           VITE_APP_GA: ${{ secrets.VITE_APP_GA }}
           VITE_APP_GA_ID: ${{ secrets.VITE_APP_GA_ID }}
           VITE_APP_TWITTER: ${{ secrets.VITE_APP_TWITTER }}
+          VITE_APP_CANONICAL_URL: ${{ secrets.VITE_APP_CANONICAL_URL }}
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
