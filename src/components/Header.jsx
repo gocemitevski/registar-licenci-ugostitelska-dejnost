@@ -1,14 +1,17 @@
 import InfoIcon from "./InfoIcon";
+import { socialLinkButtons } from "../utils/socialLinkButtons";
 
 export default function Header({ createdDate, modifiedDate, application }) {
+  const socialLinks = socialLinkButtons();
+
   return (
     <div className="text-bg-primary py-5">
       <header className="container-fluid">
         <div className="row">
           <div className="col-xxxl-10 offset-xxxl-1">
-            <div className="row">
+            <div className="row my-xxxl-4 g-3">
               <div className="col-xxxl-6">
-                <h1 className="mt-xxxl-5 mb-4">
+                <h1 className="mb-4">
                   <a
                     href="./"
                     className="hstack link-light link-underline link-underline-opacity-50 gap-3 link-offset-1"
@@ -17,7 +20,7 @@ export default function Header({ createdDate, modifiedDate, application }) {
                     <span>{import.meta.env.VITE_APP_META_TITLE}</span>
                   </a>
                 </h1>
-                <p className="lead mb-0">
+                <p className="lead mb-4">
                   Интерактивна верзија на{" "}
                   <a
                     title="Отворете ја изворната верзија на Регистарот"
@@ -32,25 +35,9 @@ export default function Header({ createdDate, modifiedDate, application }) {
                   на Министерство за економија и труд на Република Северна
                   Македонија.
                 </p>
-              </div>
-            </div>
-            <div className="row align-items-center">
-              {/* <div className="col-xxl-4">
-                <div className="form-floating">
-                  <select id="version" className="form-select">
-                    <option
-                      value={"Copy of Регистар Лиценци (2025 год)_ok.xlsx"}
-                    >
-                      2025
-                    </option>
-                  </select>
-                  <label htmlFor="version">Верзија</label>
-                </div>
-              </div> */}
-              <div className="col-xxxl-6">
                 <div className="row">
                   <div className="col-lg-4">
-                    <dl className="mb-0">
+                    <dl>
                       <dt className="hstack gap-2">
                         <span>Датум на создавање</span>
                         <InfoIcon
@@ -67,7 +54,7 @@ export default function Header({ createdDate, modifiedDate, application }) {
                     </dl>
                   </div>
                   <div className="col-lg-4">
-                    <dl className="mb-0">
+                    <dl>
                       <dt className="hstack gap-2">
                         <span>Датум на ажурирање</span>
                         <InfoIcon
@@ -84,14 +71,33 @@ export default function Header({ createdDate, modifiedDate, application }) {
                     </dl>
                   </div>
                   <div className="col-lg-4">
-                    <dl className="mb-0">
+                    <dl>
                       <dt>Изворен формат</dt>
                       <dd>{application}</dd>
                     </dl>
                   </div>
                 </div>
               </div>
-              <div className="col-xxxl-4 offset-xxxl-2 mt-3 mt-xxxl-0">
+              <div className="col-xxxl-4 offset-xxxl-2 vstack">
+                {socialLinks.length ? (
+                  <ul className="nav justify-content-end flex-fill">
+                    {socialLinks.map((icon, key) => (
+                      <li key={key} className="nav-item">
+                        <a
+                          title={`Сподели на ${icon.title}`}
+                          href={icon.href}
+                          target="_blank"
+                          rel="noopener"
+                          className="nav-link link-light"
+                        >
+                          <i className={`bi ${icon.icon}`}></i>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  ``
+                )}
                 <div className="alert alert-secondary align-items-start hstack gap-3 shadow">
                   <i className="bi bi-exclamation-square"></i>
                   <div className="vstack gap-2">
