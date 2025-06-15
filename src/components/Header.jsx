@@ -17,7 +17,7 @@ export default function Header({ createdDate, modifiedDate, application }) {
                     <span>{import.meta.env.VITE_APP_META_TITLE}</span>
                   </a>
                 </h1>
-                <p className="lead">
+                <p className="lead mb-0">
                   Интерактивна верзија на{" "}
                   <a
                     title="Отворете ја изворната верзија на Регистарот"
@@ -51,7 +51,7 @@ export default function Header({ createdDate, modifiedDate, application }) {
                 <div className="row">
                   <div className="col-lg-4">
                     <dl className="mb-0">
-                      <dt className="hstack gap-2 position-relative">
+                      <dt className="hstack gap-2">
                         <span>Датум на создавање</span>
                         <InfoIcon
                           id="datumSozdavanje"
@@ -68,7 +68,7 @@ export default function Header({ createdDate, modifiedDate, application }) {
                   </div>
                   <div className="col-lg-4">
                     <dl className="mb-0">
-                      <dt className="hstack gap-2 position-relative">
+                      <dt className="hstack gap-2">
                         <span>Датум на ажурирање</span>
                         <InfoIcon
                           id="datumAzuriranje"
