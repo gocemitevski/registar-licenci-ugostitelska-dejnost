@@ -25,6 +25,7 @@ export default function Header({ createdDate, modifiedDate, application }) {
                   <a
                     title="Отворете ја изворната верзија на Регистарот"
                     className="link-light"
+                    target="_blank"
                     href="https://www.economy.gov.mk/mk-MK/news/registar-na-izdadeni-odzemeni-i-odbieni-barana-zalicenci-za-noken-bar-kabare-diskoklub-i-diskoklub-na-otvoren-prostor.nspx"
                     rel="nofollow"
                   >
