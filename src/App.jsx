@@ -17,7 +17,9 @@ function App() {
   /* Fetch and update the state once */
   useEffect(() => {
     (async () => {
-      const f = await fetch("./xlsx/Copy of Регистар Лиценци (2025 год)_ok.xlsx");
+      const f = await fetch(
+        "./xlsx/Copy of Регистар Лиценци (2025 год)_ok.xlsx"
+      );
       const ab = await f.arrayBuffer();
 
       /* Parse */
@@ -64,12 +66,10 @@ function App() {
         location="bottom"
         buttonText="Во ред"
         cookieName={import.meta.env.VITE_APP_GA_ID}
-        containerClasses="fixed-bottom bg-dark text-light d-flex flex-wrap justify-content-between align-content-center p-3"
-        contentClasses="d-inline-flex my-auto py-2"
-        buttonClasses="btn btn-light"
-        declineButtonClasses="btn btn-outline-light ms-2"
+        containerClasses="fixed-bottom alert alert-success hstack gap-2 justify-content-between m-4 shadow"
+        contentClasses="hstack my-auto py-2"
+        buttonClasses="btn btn-success text-nowrap"
         disableStyles={true}
-        flipButtons={true}
       >
         Ова мрежно место користи т.н. колачиња за подобрување на корисничкото
         искуство.
