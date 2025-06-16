@@ -9,7 +9,7 @@ if (Cookies.get(import.meta.env.VITE_APP_GA_ID) === "true") {
   import.meta.env.VITE_APP_GA &&
     ReactGA.initialize(import.meta.env.VITE_APP_GA, {
       debug: false,
-      gaOptions: { cookieFlags: "SameSite=None;Secure", cookieDomain: "" },
+      gaOptions: { cookieDomain: "gocemitevski.github.io" },
     });
 }
 
