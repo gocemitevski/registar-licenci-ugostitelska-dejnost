@@ -108,10 +108,14 @@ export default function Table({ tableData, headersRow = 3 }) {
                           <td key={key}>
                             <div className="hstack justify-content-between align-items-start gap-2">
                               <span>{row[filter]}</span>
-                              {!filters[Object.keys(filters)[key]].includes(
-                                row[filter] &&
-                                  row[filter].toString().trim().toLowerCase()
-                              ) ? (
+                              {!filters[Object.keys(filters)[key]]
+                                .toString()
+                                .trim()
+                                .toLowerCase()
+                                .includes(
+                                  row[filter] &&
+                                    row[filter].toString().trim().toLowerCase()
+                                ) ? (
                                 <button
                                   title={`Пребарај за ${row[filter]}`}
                                   onClick={() =>
