@@ -1,5 +1,5 @@
 import TabsNav from "./TabsNav";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 
 export default function Table({ tableData, headersRow = 3 }) {
   const placeholder = "Пребарајте...";
@@ -17,19 +17,21 @@ export default function Table({ tableData, headersRow = 3 }) {
     setFilters({ ...filters, [column]: e.target.value });
   };
 
-  const results = filteredData.filter((row) =>
-    Object.keys(filters).every((column) => {
-      if (!filters[column]) return true; // If filter is empty, include the row
-      return (
-        row[column] &&
-        row[column]
-          .toString()
-          .trim()
-          .toLowerCase()
-          .includes(filters[column].trim().toLowerCase())
-      );
-    })
-  );
+  const results = useMemo(() => {
+    return filteredData.filter((row) =>
+      Object.keys(filters).every((column) => {
+        if (!filters[column]) return true; // If filter is empty, include the row
+        return (
+          row[column] &&
+          row[column]
+            .toString()
+            .trim()
+            .toLowerCase()
+            .includes(filters[column].trim().toLowerCase())
+        );
+      })
+    );
+  }, [filteredData, filters]);
 
   useEffect(() => {
     setFilteredData(tableData);
