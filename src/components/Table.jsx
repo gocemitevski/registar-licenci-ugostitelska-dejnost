@@ -156,30 +156,11 @@ export default function Table({ tableData, headersRow = 3 }) {
         </div>
       ) : (
         <Fragment>
-          <p className="placeholder-glow mb-2">
-            <span className="placeholder col-12"></span>
-          </p>
-          <p className="placeholder-glow mb-2">
-            <span className="placeholder col-12"></span>
-          </p>
-          <p className="placeholder-glow mb-2">
-            <span className="placeholder col-12"></span>
-          </p>
-          <p className="placeholder-glow mb-2">
-            <span className="placeholder col-12"></span>
-          </p>
-          <p className="placeholder-glow mb-2">
-            <span className="placeholder col-12"></span>
-          </p>
-          <p className="placeholder-glow mb-2">
-            <span className="placeholder col-12"></span>
-          </p>
-          <p className="placeholder-glow mb-2">
-            <span className="placeholder col-12"></span>
-          </p>
-          <p className="placeholder-glow mb-2">
-            <span className="placeholder col-12"></span>
-          </p>
+          {[...Array(8)].map((_, index) => (
+            <p key={index} className="placeholder-glow mb-2">
+              <span className="placeholder col-12"></span>
+            </p>
+          ))}
         </Fragment>
       )}
     </Fragment>
