@@ -5,21 +5,20 @@ import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Table from "./components/Table";
 import Footer from "./components/Footer";
 import CookieConsent from "react-cookie-consent";
+import { transliterate } from "./utils/transliterate";
 
 function App() {
-  const [izdadeni, setIzdadeni] = useState([]);
-  const [odbieni, setOdbieni] = useState([]);
-  const [odzemeni, setOdzemeni] = useState([]);
+  const [buffer, setBuffer] = useState([]);
+  const [sheets, setSheets] = useState([]);
   const [createdDate, setCreatedDate] = useState([]);
   const [modifiedDate, setModifiedDate] = useState([]);
   const [application, setApplication] = useState([]);
+  const [file, setFile] = useState(`Регистар Лиценци (2025 год)_290725.xlsx`);
 
   /* Fetch and update the state once */
   useEffect(() => {
     (async () => {
-      const f = await fetch(
-        "./xlsx/Copy of Регистар Лиценци (2025 год)_ok.xlsx"
-      );
+      const f = await fetch(`./xlsx/${file}`);
       const ab = await f.arrayBuffer();
 
       /* Parse */
@@ -29,11 +28,14 @@ function App() {
       setModifiedDate(wb.Props.ModifiedDate.toISOString());
       setApplication(wb.Props.Application);
 
-      setIzdadeni(utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]));
-      setOdzemeni(utils.sheet_to_json(wb.Sheets[wb.SheetNames[1]]));
-      setOdbieni(utils.sheet_to_json(wb.Sheets[wb.SheetNames[2]]));
+      setBuffer(wb);
+      setSheets(
+        Object.keys(wb.Sheets).map((item, key) => {
+          return utils.sheet_to_json(wb.Sheets[wb.SheetNames[key]]);
+        })
+      );
     })();
-  }, []);
+  }, [file]);
 
   return (
     <Router>
@@ -41,22 +43,40 @@ function App() {
         createdDate={createdDate}
         modifiedDate={modifiedDate}
         application={application}
+        file={file}
+        setFile={setFile}
       />
       <div className="container-fluid flex-fill">
         <div className="row mb-5">
           <div className="col-xxxl-10 offset-xxxl-1">
             <Routes>
-              <Route path="/" element={<Table tableData={izdadeni} />} />
-              <Route path="/odbieni" element={<Table tableData={odbieni} />} />
-              <Route
-                path="/odzemeni"
-                element={<Table tableData={odzemeni} headersRow={2} />}
-              />
-              {/* <Route
-                path="/ugostitelski-objekt/:uo"
-                element={<UgostitelskiObjekt />}
-              />
-              <Route path="/vid-na-licenca/:l" element={<VidNaLicenca />} /> */}
+              {sheets.map(
+                (item, key) => (
+                  console.log(buffer.SheetNames[key].toLowerCase()),
+                  (
+                    <Route
+                      path={
+                        key > 0
+                          ? `/${transliterate(
+                              buffer.SheetNames[key].toLowerCase()
+                            )}`
+                          : `/`
+                      }
+                      element={
+                        <Table
+                          headersRow={
+                            buffer.SheetNames[key] === "ОДЗЕМЕНИ" ? 2 : 3
+                          }
+                          sheetNames={buffer.SheetNames}
+                          tableData={utils.sheet_to_json(
+                            buffer.Sheets[buffer.SheetNames[key]]
+                          )}
+                        />
+                      }
+                    />
+                  )
+                )
+              )}
             </Routes>
           </div>
         </div>

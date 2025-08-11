@@ -1,17 +1,18 @@
 import { NavLink } from "react-router-dom";
+import { transliterate } from "../utils/transliterate";
 
-export default function TabsNav() {
+export default function TabsNav({ tabs }) {
   return (
     <nav className="nav nav-tabs nav-justified mt-5 mb-3">
-      <NavLink className="nav-link text-uppercase" to={"/"}>
-        Издадени лиценци
-      </NavLink>
-      <NavLink className="nav-link text-uppercase" to={"/odbieni"}>
-        Одбиени лиценци
-      </NavLink>
-      <NavLink className="nav-link text-uppercase" to={"/odzemeni"}>
-        Одземени лиценци
-      </NavLink>
+      {tabs.map((item, key) => (
+        <NavLink
+          className="nav-link text-uppercase"
+          key={key}
+          to={key > 0 ? `/${transliterate(item.toLowerCase())}` : `/`}
+        >
+          {item} лиценци
+        </NavLink>
+      ))}
     </nav>
   );
 }

@@ -1,7 +1,7 @@
 import TabsNav from "./TabsNav";
 import { Fragment, useEffect, useMemo, useState } from "react";
 
-export default function Table({ tableData, headersRow = 3 }) {
+export default function Table({ sheetNames, tableData, headersRow = 3 }) {
   const placeholder = "Пребарајте...";
   const [filters, setFilters] = useState({
     __EMPTY: "",
@@ -39,7 +39,7 @@ export default function Table({ tableData, headersRow = 3 }) {
 
   return (
     <Fragment>
-      <TabsNav />
+      <TabsNav tabs={sheetNames} />
       {tableData.length ? (
         <div className="table-responsive-md">
           <table className="table table-striped">
