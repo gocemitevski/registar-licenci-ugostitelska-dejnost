@@ -1,7 +1,13 @@
 import InfoIcon from "./InfoIcon";
 import { socialLinkButtons } from "../utils/socialLinkButtons";
 
-export default function Header({ createdDate, modifiedDate, application }) {
+export default function Header({
+  file,
+  setFile,
+  createdDate,
+  modifiedDate,
+  application,
+}) {
   const socialLinks = socialLinkButtons();
 
   return (
@@ -36,6 +42,26 @@ export default function Header({ createdDate, modifiedDate, application }) {
                   на Министерство за економија и труд на Република Северна
                   Македонија.
                 </p>
+                <div className="mb-4">
+                  <div class="form-floating">
+                    <select
+                    id="datoteka"
+                      className="form-select"
+                      onChange={(e) => setFile(e.target.value)}
+                      value={file}
+                    >
+                      <option
+                        value={`Copy of Регистар Лиценци (2025 год)_ok.xlsx`}
+                      >
+                        Copy of Регистар Лиценци (2025 год)_ok
+                      </option>
+                      <option value={`Регистар Лиценци (2025 год)_290725.xlsx`}>
+                        Регистар Лиценци (2025 год)_290725
+                      </option>
+                    </select>
+                    <label for="datoteka">Изворна датотека</label>
+                  </div>
+                </div>
                 <div className="row">
                   <div className="col-lg-4">
                     <dl>
