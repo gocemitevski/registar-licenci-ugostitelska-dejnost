@@ -32,7 +32,7 @@ export default function Header({
                     title="Отворете ја изворната верзија на Регистарот"
                     className="link-light"
                     target="_blank"
-                    href="https://www.economy.gov.mk/mk-MK/news/registar-na-izdadeni-odzemeni-i-odbieni-barana-zalicenci-za-noken-bar-kabare-diskoklub-i-diskoklub-na-otvoren-prostor.nspx"
+                    href="https://www.economy.gov.mk/mk-MK/regulativa/registri-pregledi-licenci-cenovnici/registar-n-izdadeni-licenci-za-vrsenje-na-ugostitelska-dejnost-kabare-nokjen-bar-diskoklub-i-diskoklub-na-otvoren-prostor"
                     rel="nofollow"
                   >
                     Регистарот на издадени лиценци за вршење на угостителска
