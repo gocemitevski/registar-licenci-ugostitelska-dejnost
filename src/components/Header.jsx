@@ -45,18 +45,23 @@ export default function Header({
                 <div className="mb-4">
                   <div class="form-floating">
                     <select
-                    id="datoteka"
+                      id="datoteka"
                       className="form-select"
                       onChange={(e) => setFile(e.target.value)}
                       value={file}
                     >
                       <option
-                        value={`Copy of Регистар Лиценци (2025 год)_ok.xlsx`}
+                        value={`registar-n-izdadeni-licenci-za-vrsenje-na-ugostitelska-dejnost-kabare-nokjen-bar-diskoklub-i-diskoklub-na-otvoren-prostor-file-6grd.xlsx`}
                       >
-                        Copy of Регистар Лиценци (2025 год)_ok
+                        26 август 2025
                       </option>
                       <option value={`Регистар Лиценци (2025 год)_290725.xlsx`}>
-                        Регистар Лиценци (2025 год)_290725
+                        30 јули 2025
+                      </option>
+                      <option
+                        value={`Copy of Регистар Лиценци (2025 год)_ok.xlsx`}
+                      >
+                        30 април 2025
                       </option>
                     </select>
                     <label for="datoteka">Изворна датотека</label>
