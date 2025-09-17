@@ -29,10 +29,10 @@ export default function Header({
                 <p className="lead mb-4">
                   Интерактивна верзија на{" "}
                   <a
-                    title="Отворете ја изворната верзија на Регистарот"
+                    title="Отворете ја страницата „Регистри прегледи лиценци ценовници“ на Министерство за економија и труд на Република Северна Македонија"
                     className="link-light"
                     target="_blank"
-                    href="https://www.economy.gov.mk/mk-MK/regulativa/registri-pregledi-licenci-cenovnici/registar-n-izdadeni-licenci-za-vrsenje-na-ugostitelska-dejnost-kabare-nokjen-bar-diskoklub-i-diskoklub-na-otvoren-prostor"
+                    href="https://www.economy.gov.mk/mk-MK/regulativa/registri-pregledi-licenci-cenovnici"
                     rel="nofollow"
                   >
                     Регистарот на издадени лиценци за вршење на угостителска
