@@ -13,7 +13,9 @@ function App() {
   const [createdDate, setCreatedDate] = useState([]);
   const [modifiedDate, setModifiedDate] = useState([]);
   const [application, setApplication] = useState([]);
-  const [file, setFile] = useState(`registar-n-izdadeni-licenci-za-vrsenje-na-ugostitelska-dejnost-kabare-nokjen-bar-diskoklub-i-diskoklub-na-otvoren-prostor-file-6grd.xlsx`);
+  const [file, setFile] = useState(
+    `registar-n-izdadeni-licenci-za-vrsenje-na-ugostitelska-dejnost-kabare-nokjen-bar-diskoklub-i-diskoklub-na-otvoren-prostor-file-6grd.xlsx`
+  );
 
   /* Fetch and update the state once */
   useEffect(() => {
@@ -50,33 +52,26 @@ function App() {
         <div className="row mb-5">
           <div className="col-xxxl-10 offset-xxxl-1">
             <Routes>
-              {sheets.map(
-                (item, key) => (
-                  console.log(buffer.SheetNames[key].toLowerCase()),
-                  (
-                    <Route
-                      path={
-                        key > 0
-                          ? `/${transliterate(
-                              buffer.SheetNames[key].toLowerCase()
-                            )}`
-                          : `/`
-                      }
-                      element={
-                        <Table
-                          headersRow={
-                            buffer.SheetNames[key] === "ОДЗЕМЕНИ" ? 2 : 3
-                          }
-                          sheetNames={buffer.SheetNames}
-                          tableData={utils.sheet_to_json(
-                            buffer.Sheets[buffer.SheetNames[key]]
-                          )}
-                        />
-                      }
+              {sheets.map((item, key) => (
+                <Route
+                  path={
+                    key > 0
+                      ? `/${transliterate(
+                          buffer.SheetNames[key].toLowerCase()
+                        )}`
+                      : `/`
+                  }
+                  element={
+                    <Table
+                      headersRow={buffer.SheetNames[key] === "ОДЗЕМЕНИ" ? 2 : 3}
+                      sheetNames={buffer.SheetNames}
+                      tableData={utils.sheet_to_json(
+                        buffer.Sheets[buffer.SheetNames[key]]
+                      )}
                     />
-                  )
-                )
-              )}
+                  }
+                />
+              ))}
             </Routes>
           </div>
         </div>
