@@ -42,7 +42,7 @@ export default function Header({
                   Македонија.
                 </p>
                 <div className="mb-4">
-                  <div class="form-floating">
+                  <div className="form-floating">
                     <select
                       id="datoteka"
                       className="form-select"
