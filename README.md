@@ -1,6 +1,6 @@
 # Регистар на лиценци за вршење на угостителска дејност
 
-Интерактивна верзија на **Регистарот на издадени лиценци за вршење на угостителска дејност КАБАРЕ, НОЌЕН БАР, ДИСКОКЛУБ И ДИСКОКЛУБ НА ОТВОРЕН ПРОСТОР** од [Регистри прегледи лиценци ценовници](https://www.economy.gov.mk/mk-MK/regulativa/registri-pregledi-licenci-cenovnici/registar-n-izdadeni-licenci-za-vrsenje-na-ugostitelska-dejnost-kabare-nokjen-bar-diskoklub-i-diskoklub-na-otvoren-prostor) на Министерство за економија и труд на Република Северна Македонија.
+Интерактивна верзија на **Регистарот на издадени и одбиени барања за лиценци за ноќен бар, кабаре, дискоклуб и дискоклуб на отворен простор** од [Регистри прегледи лиценци ценовници](https://www.economy.gov.mk/mk-MK/regulativa/registri-pregledi-licenci-cenovnici/registar-n-izdadeni-licenci-za-vrsenje-na-ugostitelska-dejnost-kabare-nokjen-bar-diskoklub-i-diskoklub-na-otvoren-prostor) на Министерство за економија и труд на Република Северна Македонија.
 
 ## Дополнителни можности
 
