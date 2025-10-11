@@ -63,7 +63,7 @@ export default function Header({
                         30 април 2025
                       </option>
                     </select>
-                    <label for="datoteka">Изворна датотека</label>
+                    <label htmlFor="datoteka">Изворна датотека</label>
                   </div>
                 </div>
                 <div className="row">
