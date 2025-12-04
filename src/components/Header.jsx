@@ -12,7 +12,7 @@ export default function Header({
   const socialLinks = socialLinkButtons();
 
   return (
-    <div className="text-bg-primary py-5">
+    <div className="text-bg-primary py-4">
       <header className="container-fluid">
         <div className="row">
           <div className="col-xxxl-10 offset-xxxl-1">
