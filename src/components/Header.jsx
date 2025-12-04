@@ -1,5 +1,6 @@
 import InfoIcon from "./InfoIcon";
 import { socialLinkButtons } from "../utils/socialLinkButtons";
+import { registryList } from "../utils/registryList";
 
 export default function Header({
   file,
@@ -49,19 +50,11 @@ export default function Header({
                       onChange={(e) => setFile(e.target.value)}
                       value={file}
                     >
-                      <option
-                        value={`registar-n-izdadeni-licenci-za-vrsenje-na-ugostitelska-dejnost-kabare-nokjen-bar-diskoklub-i-diskoklub-na-otvoren-prostor-file-6grd.xlsx`}
-                      >
-                        26 август 2025
-                      </option>
-                      <option value={`Регистар Лиценци (2025 год)_290725.xlsx`}>
-                        30 јули 2025
-                      </option>
-                      <option
-                        value={`Copy of Регистар Лиценци (2025 год)_ok.xlsx`}
-                      >
-                        30 април 2025
-                      </option>
+                      {registryList.map((item, key) => (
+                        <option key={key} value={item.file}>
+                          {item.date}
+                        </option>
+                      ))}
                     </select>
                     <label htmlFor="datoteka">Изворна датотека</label>
                   </div>

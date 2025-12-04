@@ -6,6 +6,7 @@ import Table from "./components/Table";
 import Footer from "./components/Footer";
 import CookieConsent from "react-cookie-consent";
 import { transliterate } from "./utils/transliterate";
+import { registryList } from "./utils/registryList";
 
 function App() {
   const [buffer, setBuffer] = useState([]);
@@ -13,9 +14,7 @@ function App() {
   const [createdDate, setCreatedDate] = useState([]);
   const [modifiedDate, setModifiedDate] = useState([]);
   const [application, setApplication] = useState([]);
-  const [file, setFile] = useState(
-    `registar-n-izdadeni-licenci-za-vrsenje-na-ugostitelska-dejnost-kabare-nokjen-bar-diskoklub-i-diskoklub-na-otvoren-prostor-file-6grd.xlsx`
-  );
+  const [file, setFile] = useState(registryList[0].file);
 
   /* Fetch and update the state once */
   useEffect(() => {
