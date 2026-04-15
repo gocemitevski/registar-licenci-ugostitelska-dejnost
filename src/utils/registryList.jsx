@@ -1,7 +1,11 @@
 export const registryList = [
   {
+    date: "14 април 2026",
+    file: "registar-na-izdadeni-i-odbieni-baranja-zaa-licenci-za-nokjen-bar-kabare-diskoklub-i-diskoklub-na-otvoren-prostor-file-tTJR.xlsx",
+  },
+  {
     date: "25 декември 2025",
-    file: "registar-na-izdadeni-i-odbieni-baranja-zaa-licenci-za-nokjen-bar-kabare-diskoklub-i-diskoklub-na-otvoren-prostor-file-RXxV.xlsx"
+    file: "registar-na-izdadeni-i-odbieni-baranja-zaa-licenci-za-nokjen-bar-kabare-diskoklub-i-diskoklub-na-otvoren-prostor-file-RXxV.xlsx",
   },
   {
     date: "4 декември 2025",
