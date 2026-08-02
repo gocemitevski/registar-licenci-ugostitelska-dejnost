@@ -1,5 +1,5 @@
 import TabsNav from "./TabsNav";
-import { Fragment, useEffect, useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 
 export default function Table({ sheetNames, tableData, headersRow = 3 }) {
   const placeholder = "Пребарајте...";
@@ -11,14 +11,12 @@ export default function Table({ sheetNames, tableData, headersRow = 3 }) {
     __EMPTY_4: "",
     __EMPTY_5: "",
   });
-  const [filteredData, setFilteredData] = useState([]);
-
   const searchData = (e, column) => {
     setFilters({ ...filters, [column]: e.target.value });
   };
 
   const results = useMemo(() => {
-    return filteredData.filter((row) =>
+    return tableData.filter((row) =>
       Object.keys(filters).every((column) => {
         if (!filters[column]) return true; // If filter is empty, include the row
         return (
@@ -31,11 +29,7 @@ export default function Table({ sheetNames, tableData, headersRow = 3 }) {
         );
       })
     );
-  }, [filteredData, filters]);
-
-  useEffect(() => {
-    setFilteredData(tableData);
-  }, [tableData]);
+  }, [tableData, filters]);
 
   return (
     <Fragment>
